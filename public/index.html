@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Household expenses</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Finanzen</h1>
+
+    <form id="form" autocomplete="off" novalidate>
+      <label>Datum
+        <input type="text" name="date" placeholder="YYYY-MM-DD" required>
+      </label>
+      <label>Betrag (€)
+        <input type="text" name="amount" inputmode="decimal" placeholder="0,00" pattern="[0-9]*[.,]?[0-9]{0,2}" required>
+      </label>
+      <label>Wo
+        <input type="text" name="place" placeholder="Ort" required>
+      </label>
+      <label>Wer
+        <input type="text" name="person" placeholder="Person" required>
+      </label>
+      <button type="submit">Hinzufügen</button>
+    </form>
+    <p id="error" role="alert" hidden></p>
+
+    <nav aria-label="Views">
+      <button data-view="all" class="active">Alles</button>
+      <button data-view="monthly">Pro Monat</button>
+      <button data-view="people">Pro Person</button>
+    </nav>
+
+    <section id="view"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
