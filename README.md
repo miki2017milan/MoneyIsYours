@@ -1,28 +1,19 @@
 # Household expenses
 
-Node.js + Express API, SQLite (better-sqlite3), plain HTML/CSS/JS frontend.
+A small selfhosted webapp for managning expenses in a household.
 
-## Run on the Raspberry Pi
-    sudo apt install -y nodejs npm     # Node 18+ recommended
-    cd expense-tracker
+# How to run
+
+    1. Clone the repo
+    git clone https://github.com/miki2017milan/MoneyIsYours.git
+
+    2. Go into the diretory
+    cd MoneyIsYours
+
+    3. Install npm packages
     npm install
-    npm start                          # http://<pi-ip>:3000
 
-Data is stored in `expenses.db` next to `server.js` (back it up by copying the file).
+    4. npm start
+
+Data is stored in `expenses.db` which is created when running the app.
 Change the port with `PORT=8080 npm start`.
-
-## Start on boot (systemd)
-Create `/etc/systemd/system/expenses.service`:
-
-    [Unit]
-    Description=Expense tracker
-    After=network.target
-    [Service]
-    WorkingDirectory=/home/pi/expense-tracker
-    ExecStart=/usr/bin/node server.js
-    Restart=always
-    User=pi
-    [Install]
-    WantedBy=multi-user.target
-
-Then: `sudo systemctl enable --now expenses`
