@@ -17,3 +17,9 @@ A small selfhosted webapp for managning expenses in a household.
 
 Data is stored in `expenses.db` which is created when running the app.
 Change the port with `PORT=8080 npm start`.
+The app UI is in german which can be changed when edeiting the html and css.
+
+# Preview
+![Alt text](images/All.png)
+![Alt text](images/Month.png)
+![Alt text](images/Person.png)
